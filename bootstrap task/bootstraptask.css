@@ -1,0 +1,11 @@
+.column_left {
+	float: left;
+	width: 50%; 
+}
+.column_right {
+	float: right;
+	width: 50%; 
+}
+h1 {
+	text-align: center;
+}
