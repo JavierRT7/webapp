@@ -4,35 +4,30 @@ class Users:
         self.surname = surname
         self.email = email
         self.password = password
-    def check_email(email):
+    def check_email(self, email):
         correct_format = False
-        for count in range(len(self.email)):
-            if self.email(count) == "@"
+        if ("@" in email):
             correct_format = True
-        #Next
         return correct_format
-    def check_password(password):
-        lower_case = "abcdefghijklmnopqrstuvwxyz"
-        upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        numbers = "0123456789"
+    def check_password(self, password):
+        lower_case = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+        upper_case = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
         valid_password = False
         contains_lower_case = False
         contains_upper_case = False
         contains_number = False
-        if len(password) >= 6 and 12 >= len(password):
-            for count in range(len(password)):
+        if len(self.password) >= 6 and 12 >= len(self.password):
+            for count in range(len(self.password)):
                 for x in range(len(lower_case)):
-                    if password(count) == lower_case(x):
+                    if self.password(count) == lower_case(x):
                         contains_lower_case = True
                 #Next
                 for x in range(len(upper_case)):
-                    if password(count) == upper_case(x):
+                    if self.password(count) == upper_case(x):
                         contains_upper_case = True
                 #Next
-                for x in range(len(numbers)):
-                    if password(count) == numbers(x):
-                        contains_number = True
-                #Next
+                if password(count).isdigit():
+                    contains_number = True
             #Next
         #End If
         if contains_lower_case == True and contains_upper_case == True and contains_number == True:
